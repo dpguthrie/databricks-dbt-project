@@ -31,3 +31,25 @@ exposures:
     # IMPORTANT: determines the lineage relationship of the exposure construct to the rest of your DAG
     depends_on:
       - ref('agg_yearly_parts_hardcoded_pivot')
+
+  - name: monthly_revenue 
+    description: |
+      # Dashboard for revenue over month
+      ============
+       This is **super** important.
+       * Don't even think about breaking it. Especially on Friday.
+
+    type: dashboard
+
+    url: databricks.com
+
+    maturity: high
+
+    owner:
+      name: Aaron Steichen
+      email: aaron.steichen@dbtlabs.com
+
+    depends_on:
+      - ref('agg_orders_by_month')
+
+

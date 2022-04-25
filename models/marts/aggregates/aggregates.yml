@@ -9,3 +9,13 @@ models:
   - name: agg_yearly_parts_dynamic_pivot
     columns:
       - name: order_year
+
+  - name: agg_orders_by_month
+    description: Table that informs a very important dashboard. Breaking it will ruin your career.
+    columns:
+      - name: gross_sales
+        description: the amount of sales processed less returns in dollars
+      - name: order_month
+        description: the month the order was placed
+        tests:
+          - unique
