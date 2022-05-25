@@ -1,9 +1,13 @@
 {{
     config(
         materialized = 'table',
+        partition_by = ['order_date'],
+        file_format = 'delta',
+        post_hook = "CREATE BLOOMFILTER INDEX ON {{ this }} FOR COLUMNS(supplier_key)",
         tags = ['finance']
-    )
+     )
 }}
+
 
 with order_item as (
     

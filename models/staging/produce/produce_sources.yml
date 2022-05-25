@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: produce
+    schema: raw_produce
+    tables:
+      - name: snap_peaple
+        description: User info on pea enthusiasts. Contains type 2 slowly changing dimensions
+      - name: squid_inc
+        description: Event streaming data on amounts of squid ink collected by squid inc's sailors who take great notes

@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
 with source as (
-
+-- this source has bad data. looks like parsing issue on the cols. Need to reload source.
   select * from {{ source('airbnb','listings') }}
 
 ),
