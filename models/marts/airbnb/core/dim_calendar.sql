@@ -1,4 +1,8 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table',
+    partition_by=['minimum_nights'],
+    file_format='delta'
+) }}
 
 with source as (
 

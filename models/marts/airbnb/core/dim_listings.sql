@@ -1,7 +1,8 @@
 {{ config(materialized='table') }}
 
 with listings as (
-
+-- there is a data issue with this source. 
+-- dbt run doesn't fail but you can't actually select from the model without getting an error
     select * from {{ ref('stg_airbnb_listings') }}
 
 ),
@@ -101,3 +102,4 @@ final as (
 )
 
 select * from final
+

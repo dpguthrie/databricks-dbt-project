@@ -1,0 +1,1 @@
+OPTIMIZE {{ ref('fct_order_items') }} where order_date >= '1992-01-01'  ZORDER BY (part_key)
