@@ -2,7 +2,8 @@
     config(
         materialized='incremental',
         unique_key='order_key',
-        incremental_strategy='merge'
+        incremental_strategy='merge',
+        file_format = 'delta'
     )
 }}
 
