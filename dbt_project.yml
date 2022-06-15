@@ -36,8 +36,8 @@ dispatch:
 # using the `{{ config(...) }}` macro.
 models:
   #removing these to test defaults of spark vs databricks adapter
-  #file_format: delta
-  #incremental_strategy: merge
+  file_format: delta
+  incremental_strategy: merge
 
   databricks_demo:
       # Applies to all files under models/example/
