@@ -5,7 +5,8 @@
           target_schema='raw_produce',
           strategy='timestamp',
           unique_key='id',
-          updated_at='updated_at'
+          updated_at='updated_at',
+          file_format='delta'
         )
     }}
 
