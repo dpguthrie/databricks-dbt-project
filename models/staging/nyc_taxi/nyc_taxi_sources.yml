@@ -5,3 +5,8 @@ sources:
     schema: samples.nyctaxi
     tables:
       - name: trips
+      
+  - name: taxi_ph
+    schema: nyctaxi
+    tables:
+      - name: trips
