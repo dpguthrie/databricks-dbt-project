@@ -1,0 +1,26 @@
+version: 2
+
+exposures:
+  - name: job_monitor_dash 
+    description: |
+      # Dashboard for job performance metadata over time
+      ===================================================
+       This is **super** important.
+       * Don't even think about breaking it. Especially on Friday.
+
+    type: dashboard
+
+    tags: ['devops']
+
+    url: databricks.com
+
+    maturity: high
+
+    owner:
+      name: Aaron Steichen
+      email: aaron.steichen@dbtlabs.com
+
+    depends_on:
+      - ref('fct_model_avg_runtime')
+
+

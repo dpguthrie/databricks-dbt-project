@@ -8,7 +8,8 @@ uniqueID,
 count(runid) as run_count,
 avg(executionTime) as avg_execution_time,
 max(executionTime) as max_execution_time,
-min(executionTime) as min_execution_time 
+min(executionTime) as min_execution_time,
+avg(runElapsedTime) as avg_run_time
 from job_mon
 group by uniqueID 
 )
@@ -30,6 +31,8 @@ h.run_count,
 h.avg_execution_time,
 h.max_execution_time,
 h.min_execution_time,
+h.avg_run_time,
+h.avg_execution_time / h.avg_run_time as pct_runtime,
 l.latest_execution_time,
 (l.latest_execution_time - h.avg_execution_time) as latest_diff
 from history h join latest_run l 
