@@ -7,7 +7,9 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
+{{ config(materialized='table',
+tags = ['pii'] )
+ }}
 
 with source_data as (
 

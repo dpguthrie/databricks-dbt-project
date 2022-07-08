@@ -48,4 +48,8 @@ models:
           materialized: view
       marts:
           materialized: table
+      meta:
+          models:
+          config:
+            tags: ['devops']
     

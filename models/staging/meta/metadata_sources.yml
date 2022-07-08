@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: dlt_meta
+    schema: dbt_asteichen
+    tables:
+      - name: dlt_gyros_job_status_raw
+        description: dbt job info collected by metadata api and fed through DLT
+    

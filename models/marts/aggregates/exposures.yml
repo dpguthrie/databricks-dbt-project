@@ -4,7 +4,7 @@ exposures:
   - name: yearly_part_rollup
     description: |
       # An h1 header
-      ============
+      ============+
 
       Paragraphs are separated by a blank line.
 
@@ -41,7 +41,7 @@ exposures:
 
     type: dashboard
 
-    url: databricks.com
+    url: https://dbc-c7c89cba-cf9b.cloud.databricks.com/?o=3718560678585456#notebook/4349240673418860/dashboard/2796125570785273/present
 
     maturity: high
 

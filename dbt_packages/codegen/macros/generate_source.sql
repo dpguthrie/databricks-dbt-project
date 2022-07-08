@@ -3,7 +3,7 @@
     {% set tables=dbt_utils.get_relations_by_pattern(
             database=database_name,
             schema_pattern=schema_name,
-            table_pattern='%'
+            table_pattern='*'
     ) %}
 
     {% set table_list= tables | map(attribute='identifier') %}
