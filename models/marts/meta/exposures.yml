@@ -12,7 +12,7 @@ exposures:
 
     tags: ['devops']
 
-    url: databricks.com
+    url: https://dbc-c7c89cba-cf9b.cloud.databricks.com/?o=3718560678585456#notebook/1309531489132026/dashboard/1309531489132028/present
 
     maturity: high
 
