@@ -46,7 +46,7 @@ exposures:
     maturity: high
 
     owner:
-      name: Aaron R Steichen
+      name: Aaron Steichen
       email: aaron.steichen@dbtlabs.com
 
     depends_on:
