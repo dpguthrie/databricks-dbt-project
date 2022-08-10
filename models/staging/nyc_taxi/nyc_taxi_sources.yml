@@ -10,3 +10,8 @@ sources:
     schema: nyctaxi
     tables:
       - name: trips
+
+  - name: taxi_hive_view
+    schema: uc_nyctaxi
+    tables:
+      - name: trips
