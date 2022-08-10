@@ -8,3 +8,5 @@ sources:
         description: User info on pea enthusiasts. Contains type 2 slowly changing dimensions
       - name: squid_inc
         description: Event streaming data on amounts of squid ink collected by squid inc's sailors who take great notes
+      - name: dupeset
+        description: duplicate records to test dbt utils dedupe

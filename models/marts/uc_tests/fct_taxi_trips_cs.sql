@@ -3,11 +3,10 @@
     config(
         materialized='table',
         file_format='delta',
-        pre_hook="use catalog samples",
-        schema = 'samples.default',
+        schema = 'external_storage.aws',
         enabled = false
     )
 }}
 
 
-select * from {{ source('taxi_ph', 'trips') }}
+select * from {{ source('taxi', 'trips') }}
