@@ -28,6 +28,10 @@ dispatch:
   - macro_namespace: dbt_utils
     search_order: ['spark_utils', 'dbt_utils']
 
+#using dbt artifacts on run end. switch to only on prod runs after testing
+on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
+
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
