@@ -1,0 +1,20 @@
+version: 2
+
+exposures:
+  - name: ml_training_health_indicators 
+    description: ML that uses feature store to generate predictions on health outcomes based on indicators
+
+    type: ml
+
+    url: https://dbc-c7c89cba-cf9b.cloud.databricks.com/?o=3718560678585456#notebook/4349240673418860/dashboard/2796125570785273/present
+
+    maturity: high
+
+    owner:
+      name: Aaron Steichen
+      email: aaron.steichen@dbtlabs.com
+
+    depends_on:
+      - ref('feat_health_indicators')
+
+
