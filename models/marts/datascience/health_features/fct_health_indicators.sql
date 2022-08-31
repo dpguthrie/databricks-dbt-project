@@ -13,20 +13,18 @@ cleaned_indicators as (
     from raw_indicators
     where 
 --removing codes related to life expectancy since that is what we want to predict
-GHO_CODE != "WHOSIS_000015"
--- removing unpublished data
-and PUBLISHSTATECODE  = "PUBLISHED"
-and SEX_CODE is not null
-and STARTYEAR > 2000
+    GHO_CODE != "WHOSIS_000015"
+    and PUBLISHSTATECODE  = "PUBLISHED"
+    and STARTYEAR > 2000
 )
 , final as (
-select 
-GHO_CODE as GHO,
-STARTYEAR as year,
-COUNTRY_CODE as country,
-nvl(numeric , Display_Value ) as value
-from cleaned_indicators
-where Display_Value > 0 
+    select 
+    GHO_CODE as GHO,
+    STARTYEAR as year,
+    COUNTRY_CODE as country,
+    nvl(numeric , Display_Value ) as value
+    from cleaned_indicators
+    where Display_Value > 0 
 )
 
 select 
