@@ -32,6 +32,9 @@ dispatch:
 #on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
 
 
+vars:
+  partition_squid_id: '%'
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
