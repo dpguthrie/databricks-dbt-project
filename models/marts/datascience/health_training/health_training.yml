@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: train_traffic_indicators
+    description: indicators for traffic-related deaths
+    columns:
+      - name: country
+        description: the country that sourced the data
+        tests:
+          - not_null

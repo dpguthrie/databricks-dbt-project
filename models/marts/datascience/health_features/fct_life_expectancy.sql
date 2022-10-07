@@ -1,5 +1,3 @@
-SELECT 
-Year, Country, 
-WHOSIS_000001 AS LifeExpectancy 
-FROM {{ ref('fct_health_indicators_pivot') }} 
-WHERE Year <= 2023
+select year, country, whosis_000001 as lifeexpectancy
+from {{ ref("fct_health_indicators_pivot") }}
+where year <= 2023
