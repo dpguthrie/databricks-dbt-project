@@ -11,7 +11,7 @@ def model(dbt, session):
 
     notebook = 'linked_notebook_test'
 
-    dbutils.notebook.run(notebook, 60)
+    dbutils.notebook.run(notebook, 600)
   
     final_df = dbt.ref("my_first_dbt_model")
     
