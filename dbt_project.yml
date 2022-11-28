@@ -29,7 +29,7 @@ dispatch:
     search_order: ['spark_utils', 'dbt_utils']
 
 #using dbt artifacts on run end. switch to only on prod runs after testing
-#on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
+on-run-end: "{{ dbt_artifacts.upload_results(results) }}"
 
 
 vars:
@@ -43,8 +43,6 @@ vars:
 # using the `{{ config(...) }}` macro.
 models:
   #removing these to test defaults of spark vs databricks adapter
-  file_format: delta
-  incremental_strategy: merge
 
   databricks_demo:
       # Applies to all files under models/example/
@@ -52,7 +50,7 @@ models:
           materialized: view
           +schema: example
       staging:
-          materialized: view
+          materialized: table
       marts:
           materialized: table
       python:

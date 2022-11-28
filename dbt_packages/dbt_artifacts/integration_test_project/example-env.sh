@@ -13,6 +13,7 @@ export DBT_ENV_SECRET_SNOWFLAKE_TEST_WAREHOUSE=
 export DBT_ENV_SECRET_DATABRICKS_HOST=
 export DBT_ENV_SECRET_DATABRICKS_HTTP_PATH=
 export DBT_ENV_SECRET_DATABRICKS_TOKEN=
+export DBT_ENV_SECRET_GCP_PROJECT=
 export DBT_ENV_SPARK_DRIVER_PATH= # /Library/simba/spark/lib/libsparkodbc_sbu.dylib on a Mac
 export DBT_ENV_SPARK_ENDPOINT= # The endpoint ID from the Databricks HTTP path
 
@@ -23,3 +24,4 @@ export DBT_CLOUD_RUN_ID=
 export DBT_CLOUD_RUN_REASON_CATEGORY=
 export DBT_CLOUD_RUN_REASON=
 export TEST_ENV_VAR_1=
+export DBT_ENV_CUSTOM_ENV_FAVOURITE_DBT_PACKAGE=dbt_artifacts

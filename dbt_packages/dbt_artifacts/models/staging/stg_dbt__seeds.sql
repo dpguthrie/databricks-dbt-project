@@ -1,14 +1,14 @@
 with base as (
 
     select *
-    from {{ source('dbt_artifacts', 'seeds') }}
+    from {{ ref('seeds') }}
 
 ),
 
 enhanced as (
 
     select
-        {{ dbt_utils.surrogate_key(['command_invocation_id', 'node_id']) }} as seed_execution_id,
+        {{ dbt_artifacts.surrogate_key(['command_invocation_id', 'node_id']) }} as seed_execution_id,
         command_invocation_id,
         node_id,
         run_started_at,
@@ -17,7 +17,9 @@ enhanced as (
         name,
         package_name,
         path,
-        checksum
+        checksum,
+        meta,
+        alias
     from base
 
 )

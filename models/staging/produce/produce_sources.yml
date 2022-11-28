@@ -3,6 +3,7 @@ version: 2
 sources:
   - name: produce
     schema: raw_produce
+    catalog: hive_metastore
     tables:
       - name: snap_peaple
         description: User info on pea enthusiasts. Contains type 2 slowly changing dimensions

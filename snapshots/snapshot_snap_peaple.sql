@@ -6,7 +6,8 @@
           strategy='timestamp',
           unique_key='id',
           updated_at='updated_at',
-          file_format='delta'
+          file_format='delta',
+          enabled =false
         )
     }}
 

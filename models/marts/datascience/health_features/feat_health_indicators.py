@@ -2,7 +2,10 @@ import pandas as pd
 
 def model(dbt, session):
 
-    dbt.config(materialized="table")
+    dbt.config(materialized="table",
+        submission_method="all_purpose_cluster",
+        create_notebook=True,
+        cluster_id="1128-212004-1o50fz7t")
   
     my_sql_model_df = dbt.ref("fct_health_indicators_pivot")
     

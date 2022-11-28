@@ -19,7 +19,10 @@ models as (
         package_name,
         path,
         checksum,
-        materialization
+        materialization,
+        tags,
+        meta,
+        alias
     from base
 
 )

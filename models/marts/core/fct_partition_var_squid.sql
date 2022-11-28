@@ -4,7 +4,8 @@ materialized='incremental',
 unique_key='id',
 incremental_strategy='merge',
 location_root = '/dbfs/delta/external_tables',
-partition_by = 'ID'
+partition_by = 'ID',
+enabled=false
 )
 }}
 

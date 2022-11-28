@@ -1,4 +1,10 @@
 --training dataset for traffic-related indicators
+{{
+    config(
+        enabled=false
+    )
+}}
+
 {% set traffic_codes = dbt_utils.get_column_values(ref('train_traffic_codes'), 'gho_code') %}
 
 

@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+{{ config(materialized='table') }}
 
 with source as (
 -- this source has bad data. looks like parsing issue on the cols. Need to reload source.
