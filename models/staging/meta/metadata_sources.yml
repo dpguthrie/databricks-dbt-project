@@ -3,6 +3,7 @@ version: 2
 sources:
   - name: dlt_meta
     schema: dbt_asteichen
+    catalog: hive_metastore
     tables:
       - name: dlt_gyros_job_status_raw
         #freshness: # default freshness. Need to convert logtime to timestamp for it to work.

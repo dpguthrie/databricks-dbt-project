@@ -76,6 +76,12 @@ Number of rows affected by the model execution.
 
 {% enddocs %}
 
+{% docs bytes_processed %}
+
+Number of bytes processed by the model execution.
+
+{% enddocs %}
+
 {% docs thread_id %}
 
 Which thread executed this node? E.g. Thread-1
@@ -329,6 +335,12 @@ Number of rows affected by the node's last full (non-incremental) run.
 
 {% enddocs %}
 
+{% docs last_full_refresh_run_bytes_processed %}
+
+Number of bytes processed by the node's last full (non-incremental) run.
+
+{% enddocs %}
+
 {% docs last_full_refresh_run_total_runtime %}
 
 Total time spent executing the node's last full (non-incremental) run (seconds).
@@ -347,8 +359,38 @@ Number of rows affected by the node's last run.
 
 {% enddocs %}
 
+{% docs last_run_bytes_processed %}
+
+Number of bytes processed by the node's last run.
+
+{% enddocs %}
+
 {% docs last_run_total_runtime %}
 
 Total time spent executing the node's last run (seconds).
+
+{% enddocs %}
+
+{% docs meta %}
+
+The meta field of the config associated with the node.
+
+{% enddocs %}
+
+{% docs invocation_args %}
+
+Key-value pairs of args passed to invocation.
+
+{% enddocs %}
+
+{% docs dbt_custom_envs %}
+
+Key-value pairs of environment variables passed to invocation that have the prefix DBT_ENV_CUSTOM_ENV_
+
+{% enddocs %}
+
+{% docs alias %}
+
+Alias of the node.
 
 {% enddocs %}

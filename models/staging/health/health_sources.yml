@@ -3,6 +3,7 @@ version: 2
 sources:
   - name: health
     schema: health
+    catalog: hive_metastore
     tables:
       - name: health_indicators
       - name: health_indicators_ind_csv

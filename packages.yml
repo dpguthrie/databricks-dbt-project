@@ -8,6 +8,6 @@ packages:
   - package: dbt-labs/spark_utils
     version: 0.3.0
   - package: brooklyn-data/dbt_artifacts
-    version: 1.1.2
+    version: 2.2.1
   - package: fal-ai/feature_store
     version: 0.1.1

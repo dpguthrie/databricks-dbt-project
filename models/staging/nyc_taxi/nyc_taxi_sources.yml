@@ -3,15 +3,18 @@ version: 2
 sources:
   - name: taxi
     schema: samples.nyctaxi
+    catalog: hive_metastore
     tables:
       - name: trips
       
   - name: taxi_ph
     schema: nyctaxi
+    catalog: hive_metastore
     tables:
       - name: trips
 
   - name: taxi_hive_view
     schema: uc_nyctaxi
+    catalog: hive_metastore
     tables:
       - name: trips
