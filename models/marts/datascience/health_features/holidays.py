@@ -3,7 +3,7 @@ import holidays
 
 def is_holiday(date_col):
     # Chez Jaffle
-    %pip install holidays
+
     french_holidays = holidays.France()
     is_holiday = (date_col in french_holidays)
     return is_holiday
