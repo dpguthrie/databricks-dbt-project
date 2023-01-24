@@ -14,7 +14,8 @@ def model(dbt, session):
         packages = ["holidays"],
         submission_method="all_purpose_cluster",
         create_notebook=True,
-        cluster_id="1121-175813-2agrmn6x"
+        enabled=False,
+        cluster_id="1128-212004-1o50fz7t"
     )
 
     orders_df = dbt.ref("stg_tpch_orders")
