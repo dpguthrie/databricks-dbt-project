@@ -5,7 +5,7 @@
 }}
 
 with raw_indicators as (
-    select * from {{ ref('snapshot_health_indicators') }}
+    select * from {{ ref('stg_health_indicators') }}
 )
 ,
 cleaned_indicators as (
