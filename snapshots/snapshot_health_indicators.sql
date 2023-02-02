@@ -6,7 +6,8 @@
           strategy='timestamp',
           unique_key='hash_key',
           updated_at='loaded_at',
-          file_format='delta'
+          file_format='delta',
+          enabled = false
         )
     }}
 
