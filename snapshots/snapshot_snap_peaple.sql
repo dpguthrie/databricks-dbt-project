@@ -7,7 +7,7 @@
           unique_key='id',
           updated_at='updated_at',
           file_format='delta',
-          enabled =false
+          enabled = false
         )
     }}
 
