@@ -5,7 +5,7 @@ def model(dbt, session):
     dbt.config(materialized="table",
         submission_method="all_purpose_cluster",
         create_notebook=True,
-        cluster_id="1128-212004-1o50fz7t")
+        cluster_id="0426-154059-dox4kjfg")
   
     my_sql_model_df = dbt.ref("feat_health_indicators")
     

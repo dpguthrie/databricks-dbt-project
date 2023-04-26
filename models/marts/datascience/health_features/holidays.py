@@ -15,7 +15,7 @@ def model(dbt, session):
         submission_method="all_purpose_cluster",
         create_notebook=True,
         enabled=False,
-        cluster_id="1128-212004-1o50fz7t"
+        cluster_id="0426-154059-dox4kjfg"
     )
 
     orders_df = dbt.ref("stg_tpch_orders")
