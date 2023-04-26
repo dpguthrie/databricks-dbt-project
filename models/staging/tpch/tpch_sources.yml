@@ -186,3 +186,8 @@ sources:
           - name: s_phone
           - name: s_acctbal
           - name: s_comment
+  - name: tpch_uc
+    schema: tpch
+    catalog: external_storage
+    tables: 
+      - name: orders_100
