@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='table',
+        enabled=false
+    )
+}}
+
 with job_mon as (
    select * from {{ ref('fct_dlt_api_job_mon') }}
 )
