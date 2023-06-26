@@ -13,9 +13,13 @@ reviews_summary as (
 
         count(*) as reviews_cnt,
         sum(
-            case 
-                when reviewed_at between date_sub(current_date(), 90) and current_date() 
-                then 1 else 0
+            case
+                when
+                    reviewed_at between date_sub(
+                        current_date(), 90
+                    ) and current_date()
+                    then 1
+                else 0
             end
         ) as reviews_in_last_90_days_cnt,
         min(reviewed_at) as first_review_at,

@@ -1,7 +1,6 @@
 {{
     config(
-        materialized = 'table',
-        transient=false
+        materialized = 'table'
     )
 }}
 
@@ -10,17 +9,20 @@ with customer as (
     select * from {{ ref('stg_tpch_customers') }}
 
 ),
+
 nation as (
 
     select * from {{ ref('stg_tpch_nations') }}
 ),
+
 region as (
 
     select * from {{ ref('stg_tpch_regions') }}
 
 ),
+
 final as (
-    select 
+    select
         customer.customer_key,
         customer.name,
         customer.address,
@@ -32,15 +34,14 @@ final as (
         customer.account_balance,
         customer.market_segment
         -- new column
-    from
-        customer
-        inner join nation
-            on customer.nation_key = nation.nation_key
-        inner join region
-            on nation.region_key = region.region_key
+    from customer
+    inner join nation
+        on customer.nation_key = nation.nation_key
+    inner join region
+        on nation.region_key = region.region_key
 )
-select 
-    *
+
+select *
 from
     final
 order by

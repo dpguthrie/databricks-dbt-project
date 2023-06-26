@@ -74,7 +74,7 @@ final as (
         listings.calendar_last_scraped_at,
         listings.calendar_updated_at,
         listings.host_since,
-        
+
         calendar_summary.minimum_minimum_nights,
         calendar_summary.maximum_minimum_nights,
         calendar_summary.average_minimum_nights,
@@ -90,16 +90,12 @@ final as (
         reviews_summary.reviews_in_last_90_days_cnt,
         reviews_summary.first_review_at,
         reviews_summary.last_review_at
-    from 
-        listings 
-    left join
-        calendar_summary 
-            on listings.listing_id = calendar_summary.listing_id
-    left join
-        reviews_summary
-            on listings.listing_id = reviews_summary.listing_id
+    from listings
+    left join calendar_summary
+        on listings.listing_id = calendar_summary.listing_id
+    left join reviews_summary
+        on listings.listing_id = reviews_summary.listing_id
 
 )
 
 select * from final
-

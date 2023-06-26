@@ -10,17 +10,19 @@
 
 
 with order_item as (
-    
+
     select * from {{ ref('order_items') }}
 
 ),
+
 part_supplier as (
-    
+
     select * from {{ ref('part_suppliers') }}
 
 ),
+
 final as (
-    select 
+    select
         order_item.order_item_key,
         order_item.order_key,
         order_item.order_date,
@@ -40,7 +42,7 @@ final as (
         order_item.discount_percentage,
         order_item.discounted_price,
         order_item.tax_rate,
-        
+
         1 as order_item_count,
         order_item.quantity,
         order_item.gross_item_sales_amount,
@@ -49,15 +51,13 @@ final as (
         order_item.item_tax_amount,
         order_item.net_item_sales_amount
 
-    from
-        order_item
-        inner join part_supplier
-            on order_item.part_key = part_supplier.part_key and
-                order_item.supplier_key = part_supplier.supplier_key
+    from order_item
+    inner join part_supplier
+        on
+            order_item.part_key = part_supplier.part_key
+            and order_item.supplier_key = part_supplier.supplier_key
 )
-select 
-    *
-from
-    final
-order by
-    order_date
+
+select *
+from final
+order by order_date

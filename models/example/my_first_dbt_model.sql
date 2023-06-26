@@ -1,4 +1,3 @@
-
 /*
     Welcome to your first dbt model!
     Did you know that you can also configure models directly within SQL files?
@@ -7,9 +6,12 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table',
-tags = ['pii'] )
- }}
+{{ 
+    config(
+        materialized='table',
+        tags = ['pii']
+    )
+}}
 
 with source_data as (
 

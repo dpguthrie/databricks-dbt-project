@@ -11,16 +11,15 @@
   )
 }}
 
-select 
-  id, 
-  date_day, 
-  date_month
-from 
-  {{ ref('incremental_seed') }}
+select
+    id,
+    date_day,
+    date_month
+from {{ ref('incremental_seed') }}
 
 {% if is_incremental() %}
-  -- this filter will only be applied on an incremental run
-  where date_day >= (select max(date_day) from {{ this }})
+    -- this filter will only be applied on an incremental run
+    where date_day >= (select max(date_day) from {{ this }})
 {% endif %}
 
 order by id asc

@@ -47,16 +47,11 @@ models:
   databricks_demo:
       # Applies to all files under models/example/
       example:
-          materialized: view
-          #+schema: example
+          +materialized: view
+          python:
+            +materialized: table
       staging:
-          materialized: table
+          +materialized: table
       marts:
-          materialized: table
-      python:
-          materialized: table
-      meta:
-          models:
-          config:
-            tags: ['devops']
-    
+          +materialized: table
+

@@ -2,7 +2,7 @@
 
 with source as (
 -- this source has bad data. looks like parsing issue on the cols. Need to reload source.
-  select * from {{ source('airbnb','listings') }}
+    select * from {{ source('airbnb', 'listings') }}
 
 ),
 
@@ -17,7 +17,6 @@ renamed as (
         property_type,
         room_type,
         accommodates as num_accommodates,
-        float(regexp_extract(bathrooms_text, '([\\d\.]+).*', 1)) as num_bathrooms,
         bathrooms_text as bathrooms_description,
         beds as num_beds,
         amenities,
@@ -30,9 +29,9 @@ renamed as (
         calculated_host_listings_count_entire_homes,
         calculated_host_listings_count_private_rooms,
         calculated_host_listings_count_shared_rooms,
+        host_url,
 
         -- Host details / dimensions
-        host_url,
         host_location,
         host_about,
         host_response_time,
@@ -40,19 +39,19 @@ renamed as (
         host_acceptance_rate,
         host_thumbnail_url,
         host_neighbourhood as host_neighborhood,
+        host_verifications as host_verifications_cnt,
         -- host_listings_count,
         -- host_total_listings_count,
-        host_verifications as host_verifications_cnt,
+        neighbourhood as neighborhood,
 
         -- Location details
-        neighbourhood as neighborhood,
         neighbourhood_cleansed as neighborhood_cleansed,
         neighborhood_overview as neighborhood_overview,
         latitude,
         longitude,
+        review_scores_rating,
 
         -- Review details
-        review_scores_rating,
         review_scores_accuracy,
         review_scores_cleanliness,
         review_scores_checkin,
@@ -60,6 +59,9 @@ renamed as (
         review_scores_location,
         review_scores_value,
         reviews_per_month,
+        float(
+            regexp_extract(bathrooms_text, '([\\d\.]+).*', 1)
+        ) as num_bathrooms,
 
         boolean(instant_bookable) as is_instant_bookable,
         boolean(host_has_profile_pic) as has_host_profile_pic,

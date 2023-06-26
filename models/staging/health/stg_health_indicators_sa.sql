@@ -1,46 +1,48 @@
 with source as (
 
-    select * from {{ source('health', 'substance_use_and_mental_health_indicators_usa_csv') }}
+    select *
+    from
+        {{ source('health', 'substance_use_and_mental_health_indicators_usa_csv') }}
 
 ),
 
 renamed as (
 
     select
-    GHO__CODE_ as GHO_CODE,
-    GHO__DISPLAY_ as GHO_DISPLAY,
-    GHO__URL_ as GHO_URL,
-    PUBLISHSTATE__CODE_ as PUBLISHSTATECODE,
-    PUBLISHSTATE__DISPLAY_ as PUBLISHSTATEDISPLAY,
-    PUBLISHSTATE__URL_ as PUBLISHSTATEURL,
-    YEAR__CODE_ as YEAR_CODE,
-    YEAR__DISPLAY_ as YEAR_DISPLAY,
-    YEAR__URL_ as YEAR_URL,
-    REGION__CODE_ as REGION_CODE,
-    STARTYEAR as STARTYEAR,
-    ENDYEAR as ENDYEAR,
-    REGION__DISPLAY_ as REGION_DISPLAY,
-    REGION__URL_ as REGION_URL,
-    WORLDBANKINCOMEGROUP__CODE_ as WORLDBANKINCOMEGROUP_CODE,
-    WORLDBANKINCOMEGROUP__DISPLAY_ as WORLDBANKINCOMEGROUP_DISPLAY,
-    WORLDBANKINCOMEGROUP__URL_ as WORLDBANKINCOMEGROUP_URL,
-    COUNTRY__CODE_ as COUNTRY_CODE,
-    COUNTRY__DISPLAY_ as COUNTRY_DISPLAY,
-    COUNTRY__URL_ as COUNTRY_URL,
-    SEX__CODE_ as SEX_CODE,
-    SEX__DISPLAY_ as SEX_DISPLAY,
-    SEX__URL_ as SEX_URL,
-    Display_Value as Display_Value,
-    Numeric as Numeric,
-    Low as Low,
-    High as High,
-    StdErr as StdErr,
-    StdDev as StdDev,
-    Comments as Comments
+        gho__code_ as gho_code,
+        gho__display_ as gho_display,
+        gho__url_ as gho_url,
+        publishstate__code_ as publishstatecode,
+        publishstate__display_ as publishstatedisplay,
+        publishstate__url_ as publishstateurl,
+        year__code_ as year_code,
+        year__display_ as year_display,
+        year__url_ as year_url,
+        region__code_ as region_code,
+        startyear as startyear,
+        endyear as endyear,
+        region__display_ as region_display,
+        region__url_ as region_url,
+        worldbankincomegroup__code_ as worldbankincomegroup_code,
+        worldbankincomegroup__display_ as worldbankincomegroup_display,
+        worldbankincomegroup__url_ as worldbankincomegroup_url,
+        country__code_ as country_code,
+        country__display_ as country_display,
+        country__url_ as country_url,
+        sex__code_ as sex_code,
+        sex__display_ as sex_display,
+        sex__url_ as sex_url,
+        display_value as display_value,
+        numeric as numeric,
+        low as low,
+        high as high,
+        stderr as stderr,
+        stddev as stddev,
+        comments as comments
 
     from source
-    where GHO__CODE_ not like '#%'
+    where gho__code_ not like '#%'
 
 )
 
- select * from renamed
+select * from renamed
