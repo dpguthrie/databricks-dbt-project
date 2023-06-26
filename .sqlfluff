@@ -7,6 +7,9 @@ capitalisation_policy = lower
 [sqlfluff:rules:capitalisation.functions]
 extended_capitalisation_policy = lower
 
+[sqlfluff:rules:capitalisation.identifiers]
+extended_capitalisation_identifier = lower
+
 [sqlfluff:rules:aliasing.table]
 aliasing = explicit
 

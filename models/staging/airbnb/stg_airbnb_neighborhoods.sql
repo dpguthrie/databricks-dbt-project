@@ -2,19 +2,19 @@
 
 with source as (
 
-  select * from {{ source('airbnb','neighbourhoods') }}
+    select * from {{ source('airbnb','neighbourhoods') }}
 
 ),
 
 renamed as (
 
-  select
-    {{ dbt_utils.surrogate_key([
-        'neighbourhood'
-    ]) }} as neighborhood_id,
-    neighbourhood_group as neighborhood_group,
-    neighbourhood as neighborhood_name
-  from source
+    select
+        {{ dbt_utils.surrogate_key([
+            'neighbourhood'
+        ]) }} as neighborhood_id,
+        neighbourhood_group as neighborhood_group,
+        neighbourhood as neighborhood_name
+    from source
 
 )
 

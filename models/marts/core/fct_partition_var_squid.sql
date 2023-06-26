@@ -12,8 +12,9 @@ enabled=false
 
 select * from {{ source('produce', 'dupeset') }}
 
-where ID like '{{ var("partition_squid_id") }}'
+where
+    ID like '{{ var("partition_squid_id") }}'
 
-{% if is_incremental() %}
-    and EVENT_TIME > (select max(EVENT_TIME) from {{ this }})
-{% endif %}
+    {% if is_incremental() %}
+        and EVENT_TIME > (select max(EVENT_TIME) from {{ this }})
+    {% endif %}
