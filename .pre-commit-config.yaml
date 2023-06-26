@@ -1,0 +1,7 @@
+repos:
+- repo: https://github.com/dbt-checkpoint/dbt-checkpoint
+  rev: v1.1.0
+  hooks:
+  - id: dbt-deps
+  - id: dbt-docs-generate
+  - id: check-script-has-no-table-name
